@@ -1,0 +1,159 @@
+getgenv().SkibidiAimbot = {
+    ['Settings'] = { 
+        Version = "TB.01",
+        Enabled = true, 
+        Mode = 2  -- 1 = Always, 2 = Toggle, 3 = Hold
+        Method = "Tool", -- [[ MouseClick, Tool ]]
+    }, 
+
+    ['Toggles'] = {
+        Keyboard = true,
+        Keybind = "q",
+        MouseButtons = false,
+        Mouse = "MouseButton2",
+    },
+
+    ['Safety'] = {
+        ForceFieldCheck = true,
+        KOCheck = true,
+        CrewCheck = true,
+        FriendCheck = false,
+        ReloadCheck = true,
+        GrabbedCheck = true,
+    },
+
+    ['Misc'] = {
+        AutoReload = false,
+        NoJumpCoolDown = false,
+        AutoReload = false,
+    },
+
+    ['Board'] = { -- [[ You Can Whitelist players you dont wanna shoot ]]
+        ['Whitelisted'] = {
+            "WhiteMan1",
+            "WhiteMan2",
+            "WhiteMan3",
+        }
+    },
+
+    ['DetectionRadius'] = {
+        ['RadiusSettings'] = {
+            UseRange = true, 
+            UseAir = true,
+            Ranges = {
+                Close = 15, 
+                Mid = 30, 
+                Far = math.huge
+            },
+            ['Radius'] = {
+                Default = 17, 
+                Airshot = 19,
+                Close = 25, 
+                Mid = 13, 
+                Far = 10
+            }
+        },
+
+        ['Visualize'] = { 
+            ['Circle'] = {
+                Visible = true, 
+                Transparency = 0.1, 
+                Thickness = 1, 
+                Filled = true,
+            },
+
+            ['Line'] = {
+                Visible = true, 
+                Transparency = 0.1, 
+                Thickness = 1, 
+                Color = Color3.fromRGB(255, 0, 0),
+            },
+
+            ['Box'] = {
+                UseBox = true,
+                Visible = true, 
+                Transparency = 0.1, 
+                Thickness = 1, 
+                Color = Color3.fromRGB(255, 0, 0),
+            },
+        }
+    },
+
+    ['Detections'] = {  -- [[ Resolver ]]
+        Enabled = true,
+        CustomDetections = {
+            Enabled = false,
+            Y = 15,
+            Z = 15,
+            X = 15,
+        }
+    },
+
+    ['Configuration'] = {
+        ['Default'] = { 
+            Hitchance = 100,
+            Prediction = 0.1355, 
+            Delay = 0.02, 
+            Hitparts = {"Head", "HumanoidRootPart", "Torso", "UpperTorso", "LowerTorso"}
+        },
+
+        ['Airshot'] = { 
+            Enabled = true, 
+            Prediction = 0.1305, 
+            Hitparts = {"UpperTorso", "LowerTorso"}, 
+            Delay = 0 ,
+        }
+    },
+
+    ['Advanced'] = { -- [[ Please, Please, Please I Beg If Your A Dumbass Don't Touch This ]]
+        ['AdvancedHitPart'] = {
+            Enabled = true,
+            ['Head'] = {Delay = 0.01, Prediction = 0.1555, HitChance = 85},
+            ['UpperTorso'] = {Delay = 0.01, Prediction = 0.1555, HitChance = 85},
+            ['LowerTorso'] = {Delay = 0.01, Prediction = 0.1555, HitChance = 85},
+            ['LeftArm'] = {Delay = 0.01, Prediction = 0.1555, HitChance = 85},
+            ['RightArm'] = {Delay = 0.01, Prediction = 0.1555, HitChance = 85},
+            ['LeftLeg'] = {Delay = 0.01, Prediction = 0.1555, HitChance = 85},
+            ['RightLeg'] = {Delay = 0.01, Prediction = 0.1555, HitChance = 85},
+        },
+
+        ['AdvancedGunSettings'] = {
+            Enabled = false,
+            ['Double-Barrel SG'] = {Delay = 0.01, Prediction = 0.1555, HitChance = 85},
+            ['Revolver'] = {Delay = 0.02, Prediction = 0.14, HitChance = 80},
+            ['TacticalShotgun'] = {Delay = 0.015, Prediction = 0.12, HitChance = 90},
+            ['Shotgun'] = {Delay = 0.03, Prediction = 0.18, HitChance = 75},
+            ['LMG'] = {Delay = 0.02, Prediction = 0.13, HitChance = 85},
+            ['SMG'] = {Delay = 0.015, Prediction = 0.11, HitChance = 80},
+        }
+
+        ['AdvancedHitChanceSettings'] = {
+            Enabled = false,
+            MinHitChance = 75,
+            MaxHitChance = 90,
+            RangedHitChance = {
+                UseRange = true,
+                Close = 25,
+                Mid = 50,
+                Far = math.huge
+            },
+
+            HitChance = {
+                Close = 95, 
+                Mid = 85, 
+                Far = 70,
+            },
+
+            AirShotHitChance = {
+                Enabled = false,
+                Chance = 70,
+            }
+        }
+    },
+
+    ['WhitelistedGuns'] = {
+        '[Revolver]', 
+        '[Double-Barrel SG]', 
+        '[TacticalShotgun]', 
+    }
+}
